@@ -82,6 +82,392 @@
 
     <main>
         <!-- Map container removed -->
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow Picture Box</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 452.88px;
+            height: auto;
+            aspect-ratio: 452.88 / 340;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: relative;
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .file-input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 8px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .edit-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="slideshow-container">
+            <div class="slides">
+                <!-- Slide 1 to 41 -->
+                <div class="slide">
+                    <img src="image1.jpg" alt="Image 1">
+                    <input type="file" class="file-input" accept="image/*" data-slide="0">
+                    <button class="edit-button" data-slide="0">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image2.jpg" alt="Image 2">
+                    <input type="file" class="file-input" accept="image/*" data-slide="1">
+                    <button class="edit-button" data-slide="1">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image3.jpg" alt="Image 3">
+                    <input type="file" class="file-input" accept="image/*" data-slide="2">
+                    <button class="edit-button" data-slide="2">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image4.jpg" alt="Image 4">
+                    <input type="file" class="file-input" accept="image/*" data-slide="3">
+                    <button class="edit-button" data-slide="3">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image5.jpg" alt="Image 5">
+                    <input type="file" class="file-input" accept="image/*" data-slide="4">
+                    <button class="edit-button" data-slide="4">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image6.jpg" alt="Image 6">
+                    <input type="file" class="file-input" accept="image/*" data-slide="5">
+                    <button class="edit-button" data-slide="5">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image7.jpg" alt="Image 7">
+                    <input type="file" class="file-input" accept="image/*" data-slide="6">
+                    <button class="edit-button" data-slide="6">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image8.jpg" alt="Image 8">
+                    <input type="file" class="file-input" accept="image/*" data-slide="7">
+                    <button class="edit-button" data-slide="7">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image9.jpg" alt="Image 9">
+                    <input type="file" class="file-input" accept="image/*" data-slide="8">
+                    <button class="edit-button" data-slide="8">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image10.jpg" alt="Image 10">
+                    <input type="file" class="file-input" accept="image/*" data-slide="9">
+                    <button class="edit-button" data-slide="9">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image11.jpg" alt="Image 11">
+                    <input type="file" class="file-input" accept="image/*" data-slide="10">
+                    <button class="edit-button" data-slide="10">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image12.jpg" alt="Image 12">
+                    <input type="file" class="file-input" accept="image/*" data-slide="11">
+                    <button class="edit-button" data-slide="11">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image13.jpg" alt="Image 13">
+                    <input type="file" class="file-input" accept="image/*" data-slide="12">
+                    <button class="edit-button" data-slide="12">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image14.jpg" alt="Image 14">
+                    <input type="file" class="file-input" accept="image/*" data-slide="13">
+                    <button class="edit-button" data-slide="13">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image15.jpg" alt="Image 15">
+                    <input type="file" class="file-input" accept="image/*" data-slide="14">
+                    <button class="edit-button" data-slide="14">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image16.jpg" alt="Image 16">
+                    <input type="file" class="file-input" accept="image/*" data-slide="15">
+                    <button class="edit-button" data-slide="15">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image17.jpg" alt="Image 17">
+                    <input type="file" class="file-input" accept="image/*" data-slide="16">
+                    <button class="edit-button" data-slide="16">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image18.jpg" alt="Image 18">
+                    <input type="file" class="file-input" accept="image/*" data-slide="17">
+                    <button class="edit-button" data-slide="17">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image19.jpg" alt="Image 19">
+                    <input type="file" class="file-input" accept="image/*" data-slide="18">
+                    <button class="edit-button" data-slide="18">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image20.jpg" alt="Image 20">
+                    <input type="file" class="file-input" accept="image/*" data-slide="19">
+                    <button class="edit-button" data-slide="19">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image21.jpg" alt="Image 21">
+                    <input type="file" class="file-input" accept="image/*" data-slide="20">
+                    <button class="edit-button" data-slide="20">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image22.jpg" alt="Image 22">
+                    <input type="file" class="file-input" accept="image/*" data-slide="21">
+                    <button class="edit-button" data-slide="21">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image23.jpg" alt="Image 23">
+                    <input type="file" class="file-input" accept="image/*" data-slide="22">
+                    <button class="edit-button" data-slide="22">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image24.jpg" alt="Image 24">
+                    <input type="file" class="file-input" accept="image/*" data-slide="23">
+                    <button class="edit-button" data-slide="23">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image25.jpg" alt="Image 25">
+                    <input type="file" class="file-input" accept="image/*" data-slide="24">
+                    <button class="edit-button" data-slide="24">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image26.jpg" alt="Image 26">
+                    <input type="file" class="file-input" accept="image/*" data-slide="25">
+                    <button class="edit-button" data-slide="25">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image27.jpg" alt="Image 27">
+                    <input type="file" class="file-input" accept="image/*" data-slide="26">
+                    <button class="edit-button" data-slide="26">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image28.jpg" alt="Image 28">
+                    <input type="file" class="file-input" accept="image/*" data-slide="27">
+                    <button class="edit-button" data-slide="27">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image29.jpg" alt="Image 29">
+                    <input type="file" class="file-input" accept="image/*" data-slide="28">
+                    <button class="edit-button" data-slide="28">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image30.jpg" alt="Image 30">
+                    <input type="file" class="file-input" accept="image/*" data-slide="29">
+                    <button class="edit-button" data-slide="29">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image31.jpg" alt="Image 31">
+                    <input type="file" class="file-input" accept="image/*" data-slide="30">
+                    <button class="edit-button" data-slide="30">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image32.jpg" alt="Image 32">
+                    <input type="file" class="file-input" accept="image/*" data-slide="31">
+                    <button class="edit-button" data-slide="31">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image33.jpg" alt="Image 33">
+                    <input type="file" class="file-input" accept="image/*" data-slide="32">
+                    <button class="edit-button" data-slide="32">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image34.jpg" alt="Image 34">
+                    <input type="file" class="file-input" accept="image/*" data-slide="33">
+                    <button class="edit-button" data-slide="33">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image35.jpg" alt="Image 35">
+                    <input type="file" class="file-input" accept="image/*" data-slide="34">
+                    <button class="edit-button" data-slide="34">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image36.jpg" alt="Image 36">
+                    <input type="file" class="file-input" accept="image/*" data-slide="35">
+                    <button class="edit-button" data-slide="35">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image37.jpg" alt="Image 37">
+                    <input type="file" class="file-input" accept="image/*" data-slide="36">
+                    <button class="edit-button" data-slide="36">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image38.jpg" alt="Image 38">
+                    <input type="file" class="file-input" accept="image/*" data-slide="37">
+                    <button class="edit-button" data-slide="37">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image39.jpg" alt="Image 39">
+                    <input type="file" class="file-input" accept="image/*" data-slide="38">
+                    <button class="edit-button" data-slide="38">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image40.jpg" alt="Image 40">
+                    <input type="file" class="file-input" accept="image/*" data-slide="39">
+                    <button class="edit-button" data-slide="39">Edit</button>
+                </div>
+                <div class="slide">
+                    <img src="image41.jpg" alt="Image 41">
+                    <input type="file" class="file-input" accept="image/*" data-slide="40">
+                    <button class="edit-button" data-slide="40">Edit</button>
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.slide');
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.transform = `translateX(${-slideIndex * 100}%)`;
+            }
+        }
+
+        function plusSlides(n) {
+            let slides = document.querySelectorAll('.slide');
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            showSlides();
+        }
+
+        function loadImages() {
+            document.querySelectorAll('.slide').forEach((slide, index) => {
+                const img = slide.querySelector('img');
+                const storedImage = localStorage.getItem(`image${index}`);
+                if (storedImage) {
+                    img.src = storedImage;
+                }
+            });
+        }
+
+        function saveImage(index, dataUrl) {
+            localStorage.setItem(`image${index}`, dataUrl);
+        }
+
+        function deleteImage(index) {
+            localStorage.removeItem(`image${index}`);
+            document.querySelectorAll('.slide')[index].querySelector('img').src = '';
+        }
+
+        document.querySelectorAll('.file-input').forEach((input) => {
+            input.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                const slideIndex = event.target.getAttribute('data-slide');
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const img = document.querySelectorAll('.slide')[slideIndex].querySelector('img');
+                        img.src = e.target.result;
+                        saveImage(slideIndex, e.target.result);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+
+        document.querySelectorAll('.edit-button').forEach((button) => {
+            button.addEventListener('click', function() {
+                const slideIndex = this.getAttribute('data-slide');
+                const input = document.querySelectorAll('.slide')[slideIndex].querySelector('.file-input');
+                input.click();
+            });
+        });
+
+        loadImages();
+    </script>
+</body>
+</html>
+
     </main>
 </body>
 </html>
